@@ -312,7 +312,8 @@ AC_ARG_WITH(_PKG_WITH_ARG,
     [AS_TR_SH([with_]_PKG_WITH_ARG)=_PKG_WITH_DEFAULT])
 
 AS_CASE([$AS_TR_SH([with_]_PKG_WITH_ARG)],
-            [yes],[PKG_CHECK_MODULES([$1],[$2],[$3],[$4])],
+            [yes],[PKG_CHECK_MODULES([$1],[$2],[$3],
+                                        m4_ifval([$4], [[m4_n([_PKG_WITH_IF_NOT_FOUND]) $4]]))],
             [auto],[PKG_CHECK_MODULES([$1],[$2],
                                         [m4_n([_PKG_WITH_IF_FOUND]) $3],
                                         [m4_n([_PKG_WITH_IF_NOT_FOUND]) $4])])
