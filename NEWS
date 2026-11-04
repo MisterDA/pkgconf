@@ -1,6 +1,23 @@
 Changes from previous version of pkgconf
 ========================================
 
+* pkg.m4 changes (serial 17):
+  - PKG_INSTALLDIR and PKG_NOARCH_INSTALLDIR: --with-pkgconfigdir and
+    --with-noarch-pkgconfigdir with no value now use the default directory,
+    instead of a directory named "yes".  --without-pkgconfigdir still sets
+    pkgconfigdir to "no".
+  - PKG_INSTALLDIR and PKG_NOARCH_INSTALLDIR: the --help text no longer shows
+    the shell quotes around the default directory, and DIRECTORY can now
+    contain a comma.
+  - PKG_WITH_MODULES: the option name now uses '-' instead of '_', e.g.
+    --with-foo-bar for FOO_BAR.  --with-foo_bar is still accepted, and the
+    shell variable is still with_foo_bar.  The AC_DEFINE description of
+    PKG_HAVE_DEFINE_WITH_MODULES changes in the same way.
+  - PKG_WITH_MODULES: with --with-<name> and an ACTION-IF-NOT-FOUND,
+    with_<name> is now set to "no" when the modules are not found.
+  - PKG_CHECK_MODULES_STATIC no longer adds --static when PKG_CONFIG is empty.
+    Patches by Antonin Décimo.
+
 Changes from 2.5.1 to 3.0.0:
 ----------------------------
 
