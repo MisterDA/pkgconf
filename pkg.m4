@@ -308,6 +308,9 @@ AS_CASE([$AS_TR_SH([with_]with_arg)],
 m4_popdef([with_arg])
 m4_popdef([description])
 m4_popdef([def_arg])
+m4_popdef([def_action_if_found])
+m4_popdef([def_action_if_not_found])
+m4_popdef([with_without])
 
 ])dnl PKG_WITH_MODULES
 
