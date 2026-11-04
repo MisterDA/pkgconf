@@ -285,7 +285,7 @@ AC_DEFUN([PKG_WITH_MODULES],
 m4_pushdef([_PKG_WITH_ARG], m4_tolower([$1]))
 
 m4_pushdef([_PKG_WITH_DESCRIPTION],
-           [m4_default([$5], [build with ]_PKG_WITH_ARG[ support])])
+           [m4_default_quoted([$5], [build with ]_PKG_WITH_ARG[ support])])
 
 m4_pushdef([_PKG_WITH_DEFAULT], [m4_default([$6], [auto])])
 m4_pushdef([_PKG_WITH_IF_FOUND], [AS_TR_SH([with_]_PKG_WITH_ARG)=yes])
