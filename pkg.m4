@@ -179,7 +179,7 @@ path to pkg-config.
 
 _PKG_TEXT
 
-To get a pkg-config implementation, see <http://github.com/pkgconf/pkgconf>.])[]dnl
+To get a pkg-config implementation, see <https://github.com/pkgconf/pkgconf>.])[]dnl
         ])
 else
         $1[]_CFLAGS=$pkg_cv_[]$1[]_CFLAGS
