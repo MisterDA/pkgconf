@@ -163,7 +163,7 @@ if test $pkg_failed = yes; then
         m4_default([$4], [AC_MSG_ERROR(
 [Package requirements ($2) were not met:
 
-$$1_PKG_ERRORS
+$$1[]_PKG_ERRORS
 
 Consider adjusting the PKG_CONFIG_PATH environment variable if you
 installed software in a non-standard prefix.
