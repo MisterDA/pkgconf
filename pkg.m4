@@ -85,8 +85,8 @@ dnl PKG_CHECK_MODULES(), but does not set variables or print errors.
 dnl
 dnl Please remember that m4 expands AC_REQUIRE([PKG_PROG_PKG_CONFIG])
 dnl only at the first occurrence in configure.ac, so if the first place
-dnl it's called might be skipped (such as if it is within an "if", you
-dnl have to call PKG_CHECK_EXISTS manually
+dnl it's called might be skipped (such as if it is within an "if"), you
+dnl have to call PKG_PROG_PKG_CONFIG manually.
 AC_DEFUN([PKG_CHECK_EXISTS],
 [AC_REQUIRE([PKG_PROG_PKG_CONFIG])dnl
 if test -n "$PKG_CONFIG" && \
@@ -213,7 +213,7 @@ PKG_CONFIG=$_save_PKG_CONFIG[]dnl
 
 
 dnl PKG_INSTALLDIR([DIRECTORY])
-dnl -------------------------
+dnl ---------------------------
 dnl Since: 0.27
 dnl
 dnl Substitutes the variable pkgconfigdir as the location where a module
@@ -235,7 +235,7 @@ m4_popdef([pkg_description])
 
 
 dnl PKG_NOARCH_INSTALLDIR([DIRECTORY])
-dnl --------------------------------
+dnl ----------------------------------
 dnl Since: 0.27
 dnl
 dnl Substitutes the variable noarch_pkgconfigdir as the location where a
@@ -319,7 +319,7 @@ dnl   [DESCRIPTION], [DEFAULT])
 dnl -----------------------------------------------
 dnl
 dnl Convenience macro to trigger AM_CONDITIONAL after PKG_WITH_MODULES
-dnl check._[VARIABLE-PREFIX] is exported as make variable.
+dnl check. HAVE_[VARIABLE-PREFIX] is exported as a make variable.
 AC_DEFUN([PKG_HAVE_WITH_MODULES],
 [
 PKG_WITH_MODULES([$1],[$2],,,[$3],[$4])
